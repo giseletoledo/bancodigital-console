@@ -3,12 +3,15 @@ package br.com.bancodigital.view;
 import br.com.bancodigital.model.*;
 import br.com.bancodigital.service.ClienteService;
 import br.com.bancodigital.service.ContaService;
+
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
 	private final ContaService contaService;
     private final ClienteService clienteService;
     private final Scanner scanner;
+    
 
     // Construtor que recebe os serviços necessários
     public Menu(ContaService contaService, ClienteService clienteService) {
@@ -30,6 +33,8 @@ public class Menu {
             System.out.println("8. Exibir Extrato");
             System.out.println("9. Sair");
             System.out.print("Escolha uma opção: ");
+            
+            scanner.useLocale(Locale.US);
 
             int opcao = scanner.nextInt();
             scanner.nextLine(); // Consumir a quebra de linha
